@@ -4,7 +4,19 @@ public class Conta {
     int numero;
     String titular;
 
+    // metodo no java
     public void deposita(double valor) {
-        this.saldo = this.saldo + valor;
+        this.saldo += valor;
+    }
+
+    // metodo saca no Java
+    public boolean saca(double valor) {
+        if (this.saldo >= valor) {
+            this.saldo -= valor;
+            return true;
+        } else {
+            return false;
+        }
     }
 }
+// TODO: novo objeto;
