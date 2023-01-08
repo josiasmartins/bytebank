@@ -20,6 +20,10 @@ public class TestaMetodos {
             System.out.println("faltou dinheiro");
         }
         System.out.println(contaDaMaria.saldo);
+        System.out.println(conta.saldo);
+
+        //conta.titular = "paulo silveira";
+        System.out.println(conta.titular);
     }
 
 }
