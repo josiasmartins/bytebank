@@ -1,7 +1,7 @@
 public class TestaContaSemCliente {
 
     public static void main(String[] args) {
-        Conta contaDaMarcela = new Conta();
+        Conta contaDaMarcela = new Conta(2222, 222);
         Console console = new Console();
         console.consolePulaLinha(contaDaMarcela.getSaldo());
 

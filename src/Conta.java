@@ -1,8 +1,20 @@
 public class Conta {
     private double saldo;
-    private int agencia = 44;
+    private int agencia;
     private int numero;
     private Cliente titular;
+    private Console console = new Console();
+    private static int total;
+
+    // constructor (default) do java
+    // constructor pode receber parametros
+    public Conta(int agencia, int numero) {
+        Conta.total++;
+        console.consolePulaLinha("o total de contas é " + Conta.total);
+        this.agencia = agencia;
+        this.numero = numero;
+        console.consolePulaLinha("estou crinado uma conta " + this.numero);
+    }
 
     public void deposita(double valor) {
         this.saldo += valor;
@@ -36,6 +48,10 @@ public class Conta {
     }
 
     public void setNumero(int numero) {
+        if (numero <= 0) {
+            console.consolePulaLinha("não pode valor <= 0");
+            return;
+        }
         this.numero = numero;
     }
 
@@ -43,7 +59,11 @@ public class Conta {
         return this.agencia;
     }
 
-    public void setagencia(int agencia) {
+    public void setAgencia(int agencia) {
+        if (agencia <= 0) {
+            console.consolePulaLinha("não pode valor menor igual a 0");
+            return;
+        }
         this.agencia = agencia;
     }
 
@@ -53,6 +73,10 @@ public class Conta {
 
     public Cliente getTitular() {
         return this.titular;
+    }
+
+    public static int getTotal() {
+        return Conta.total;
     }
 
 }
